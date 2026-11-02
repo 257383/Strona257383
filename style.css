@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1f2a24;
+    background-color: #eef3ef;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: #1d6b43;
+}
+
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    position: relative;
+    z-index: 100;
+    background-color: #2f4a3b;
+    color: #ffffff;
+    padding-top: 20px;
+}
+
+header .content {
+    position: relative;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header p {
+    margin: 4px 0 16px;
+    color: #cfe3d6;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.burger {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.burger:hover {
+    background-color: #234032;
+}
+
+.burger span {
+    position: relative;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    transition: transform 0.25s, top 0.25s, background-color 0.25s;
+}
+
+.burger span::before,
+.burger span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.burger span::before {
+    top: -8px;
+}
+
+.burger span::after {
+    top: 8px;
+}
+
+.menu-toggle:checked + .content .burger span {
+    background-color: transparent;
+}
+
+.menu-toggle:checked + .content .burger span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-toggle:checked + .content .burger span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-toggle:focus-visible + .content .burger {
+    outline: 2px solid #cfe3d6;
+    outline-offset: 2px;
+}
+
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #234032;
+}
+
+.menu-toggle:checked ~ nav {
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.25);
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 960px;
+}
+
+.menu-toggle:checked ~ nav ul {
+    display: block;
+}
+
+nav li {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav li:first-child {
+    border-top: none;
+}
+
+nav a {
+    display: block;
+    padding: 14px 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.aktywna {
+    background-color: #1d6b43;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+section {
+    background-color: #ffffff;
+    border-left: 5px solid #4f7a5a;
+    border-radius: 6px;
+    padding: 4px 24px 16px;
+    margin-bottom: 20px;
+}
+
+.kolumny {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.kolumny section {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.wiecej {
+    display: block;
+    text-align: center;
+}
+
+.karta {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #234032;
+}
+
+h2 {
+    color: #234032;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #2f4a3b;
+    color: #ffffff;
+    margin-top: 20px;
+    padding-top: 16px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    color: #cfe3d6;
+}
+
+.copyright {
+    background-color: #234032;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 10px 0;
+    margin-top: 12px;
+}
+
+.copyright p {
+    margin: 0;
+}
